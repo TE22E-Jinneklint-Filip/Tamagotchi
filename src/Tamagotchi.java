@@ -4,17 +4,17 @@ import java.util.Random;
 
 public class Tamagotchi {
     public String name = "";
-    private int hunger = 0;
-    private int boredom = 0;
+    private int hunger = 10;
+    private int boredom = 10;
     private boolean isAlive = true;
     private List<String> words = new ArrayList<>();
 
     public void feed(int hunger) {
-        this.hunger++;
+        this.hunger =+ 2;
     }
 
     private void reduceBoredom(int boredom) {
-        this.boredom++;
+        this.boredom=+ 2;
     }
 
     public boolean getAlive() {
@@ -39,10 +39,10 @@ public class Tamagotchi {
     }
 
     public void tick() {
-        hunger++;
-        boredom++;
+        hunger--;
+        boredom--;
 
-        if (hunger == 10 || boredom == 10) {
+        if (hunger == 0 || boredom == 0) {
             isAlive = false;
         }
     }
